@@ -1,4 +1,5 @@
 import { NearWalletConnector } from "@/components/NearWalletSelector";
+import { BasicDemo } from "@/components/BasicDemo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function Home() {
                 Mintbase.js Simple Login Example
               </div>
               <NearWalletConnector />
+              <BasicDemo />
             </div>
           </div>
         </div>
