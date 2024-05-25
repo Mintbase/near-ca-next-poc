@@ -168,12 +168,13 @@ export const WalletConnectProvider = ({
     // Retrieve (r, s) values for ECDSA signature (from Near TxReceipt)
     console.log(nearTxHash)
     
-    const [big_r, big_s] = await signatureFromTxHash(
+    const {big_r, big_s} = await signatureFromTxHash(
       "https://rpc.testnet.near.org",
       nearTxHash
     );
     console.log("retrieved signature from Near MPC Contract", big_r, big_s);
     const signature = await adapter.recoverSignature(txData.recoveryData, {big_r, big_s});
+
     console.log("Recovered Hex Signature", signature)
     await web3wallet!.respondSessionRequest({
       topic: request.topic,
