@@ -185,9 +185,8 @@ export const WalletConnectProvider = ({
       },
     });
     // // Remove Local storage related to this.
-    // localStorage.removeItem("wc-request");
-    // localStorage.removeItem("txData");
-    // return signature
+    localStorage.removeItem("wc-request");
+    localStorage.removeItem("txData");
     console.log("HORRAY! EVM Signature", signature);
   };
 
